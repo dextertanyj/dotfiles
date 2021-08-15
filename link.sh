@@ -2,13 +2,20 @@
 
 BASEDIR=$PWD
 
+if ! zsh --version &> /dev/null; then
+    echo "Please install ZSH."
+    exit 1
+fi
+
 if [ "$(uname -s)" == "Darwin" ]; then
     mkdir -p $HOME/Library/Fonts
     cp $BASEDIR/fonts/*.ttf $HOME/Library/Fonts/
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     mkdir -p $HOME/.local/share/fonts
     cp $BASEDIR/fonts/*.ttf $HOME/.local/share/fonts/
-    fc-cache -f
+    if type fc-cache &> /dev/null; then
+        fc-cache -f
+    fi
 else
     echo "Unsupported platform."
     exit 1
@@ -39,9 +46,9 @@ fi
 
 for file in .*
 do
-    if [ "$file" == "." ] || [ "$file" == ".." ] || ["$file" == ".DS_Store"]; then
+    if [ "$file" == "." ] || [ "$file" == ".." ] || [ "$file" == ".DS_Store" ]; then
         continue
-    elif [ "$file" == ".git" ] || [ "$file" == ".gitmodules" ]; then
+    elif [ "$file" == ".git" ] || [ "$file" == ".gitmodules" ] || [ "$file" == ".gitignore" ]; then
         continue
     fi
     ln -s "$BASEDIR/$file" "$HOME/$file"
