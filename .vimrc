@@ -19,3 +19,5 @@ set ruler
 set number
 
 syntax on
+
+colorscheme delek
