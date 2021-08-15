@@ -39,7 +39,7 @@ fi
 
 for file in .*
 do
-    if [ "$file" == "." ] || [ "$file" == ".." ]; then
+    if [ "$file" == "." ] || [ "$file" == ".." ] || ["$file" == ".DS_Store"]; then
         continue
     elif [ "$file" == ".git" ] || [ "$file" == ".gitmodules" ]; then
         continue
