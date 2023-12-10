@@ -7,3 +7,9 @@
 [submodule "custom/zsh/themes/powerlevel10k"]
 	path = custom/zsh/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "custom/vim/pack/themes/start/vim-code-dark"]
+	path = custom/vim/pack/themes/start/vim-code-dark
+	url = https://github.com/tomasiser/vim-code-dark
+[submodule "custom/vim/pack/dist/start/vim-airline"]
+	path = custom/vim/pack/dist/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
