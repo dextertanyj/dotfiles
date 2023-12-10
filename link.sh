@@ -38,7 +38,7 @@ if (test $? -ne 0) then
     exit 1
 fi
 
-git clone --quiet git@github.com:ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
+git clone --quiet https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 if (test $? -ne 0) then
     echo "Error cloning Oh My Zsh."
     exit 1
